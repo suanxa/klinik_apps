@@ -1,10 +1,12 @@
 package com.suanxa.klinik_app
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.ColorSpace.Model
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -47,11 +49,11 @@ class doctor_page : AppCompatActivity() {
 
         //data untuk dokter
         val menudokter = listOf(
-            modellistdoctor("Dr.Floyd Miles",R.drawable.dokter1,R.drawable.bintang,"Pediatrics","(123 reviews)","4.9"),
-            modellistdoctor("Dr.Guy Hawkins",R.drawable.dokter2,R.drawable.bintang,"Dentist","(85 reviews)","4.9"),
-            modellistdoctor("Dr.Jane Cooper",R.drawable.dokter3,R.drawable.bintang,"Cardiologist","(44 reviews)","4.7"),
-            modellistdoctor("Dr.Jacob Jones",R.drawable.dokter4,R.drawable.bintang,"Nephrologyst","(101 reviews)","5.0"),
-            modellistdoctor("Dr.Savannah Nguyen",R.drawable.dokter5,R.drawable.bintang,"Urologist","(168 reviews)","4.8")
+            modellistdoctor("Dr.Floyd Miles",R.drawable.dokter1,R.drawable.bintang,"Pediatrics","(123 reviews)","4.9","20-Sep-2024","09.00pm"),
+            modellistdoctor("Dr.Guy Hawkins",R.drawable.dokter2,R.drawable.bintang,"Dentist","(85 reviews)","4.9","18-Sep-2024","10.00pm"),
+            modellistdoctor("Dr.Jane Cooper",R.drawable.dokter3,R.drawable.bintang,"Cardiologist","(44 reviews)","4.7","28-Sep-2024","07.00pm"),
+            modellistdoctor("Dr.Jacob Jones",R.drawable.dokter4,R.drawable.bintang,"Nephrologyst","(101 reviews)","5.0","7-Sep-2024","09.00am"),
+            modellistdoctor("Dr.Savannah Nguyen",R.drawable.dokter5,R.drawable.bintang,"Urologist","(168 reviews)","4.8","4-Sep-2024","02.00pm")
         )
 
         //inisialisasi recycleview dan adapter
@@ -61,6 +63,11 @@ class doctor_page : AppCompatActivity() {
         RecyclerViewDoctor.adapter = AdapterDoctor
 
 
+        val tombol1: TextView = findViewById(R.id.textView7)
+        tombol1.setOnClickListener {
+            val intent = Intent(this, pagelogin::class.java)
+            startActivity(intent)
+        }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

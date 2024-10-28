@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Klinik_app"
         tools:targetApi="31">
         <activity
+            android:name=".detail_doctor"
+            android:exported="false" />
+        <activity
+            android:name=".HomeDoctorActivity"
+            android:exported="false" />
+        <activity
             android:name=".doctor_page"
             android:exported="false" />
         <activity

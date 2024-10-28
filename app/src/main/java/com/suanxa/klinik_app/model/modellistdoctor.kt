@@ -6,5 +6,7 @@ data class modellistdoctor(
     var imagebintang : Int,
     var bidang : String,
     var totalreview : String,
-    var angkareview : String
+    var angkareview : String,
+    var date : String,
+    var time : String
 )
